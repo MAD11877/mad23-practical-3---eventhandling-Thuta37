@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
     boolean followed = false;
     public void onFollowClick (View v){
         if (followed) {
-
+            Toast.makeText(getBaseContext(),"Unfollowed", Toast.LENGTH_SHORT).show();
             Button button = (Button) findViewById(R.id.btnFollow);
             button.setText("Follow");
             followed = false;
 
         } else {
-
+            Toast.makeText(getBaseContext(),"Followed", Toast.LENGTH_SHORT).show();
             Button button = (Button) findViewById(R.id.btnFollow);
             button.setText("Unfollow");
             followed = true;
