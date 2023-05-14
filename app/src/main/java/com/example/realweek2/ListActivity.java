@@ -1,11 +1,14 @@
 package com.example.realweek2;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -45,7 +48,8 @@ public class ListActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Random random = new Random();
-                        int randomNumber = random.nextInt(100);
+                        int randomNumber = random.nextInt();
+                        Log.i(TAG, String.valueOf(randomNumber));
                         Intent nextActivity = new Intent(ListActivity.this, MainActivity.class);
                         nextActivity.putExtra("Random integer", randomNumber);
                         startActivity(nextActivity);

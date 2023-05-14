@@ -22,12 +22,17 @@ public class MainActivity extends AppCompatActivity {
         user.setFollowed(false);
 
         Intent receivingEnd = getIntent();
-        int randomInt = Integer.parseInt(receivingEnd.getStringExtra("Random integer"));
+        int randomInt = receivingEnd.getIntExtra("Random integer", 0);
 
-        TextView myText = findViewById(R.id.textView);
-        String randomInteger = String.valueOf(randomInt);
-        myText.setText("MAD" + randomInteger);
+        TextView myText =(TextView) findViewById(R.id.textView);
+        String message = "MAD " + randomInt;
+        myText.setText(message);
+
+
+
     }
+
+
 
     boolean followed = false;
     public void onFollowClick (View v){
