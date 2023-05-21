@@ -27,12 +27,7 @@ public class MainActivity extends AppCompatActivity {
         TextView myText =(TextView) findViewById(R.id.textView);
         String message = "MAD " + randomInt;
         myText.setText(message);
-
-
-
     }
-
-
 
     boolean followed = false;
     public void onFollowClick (View v){
@@ -48,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
             button.setText("Unfollow");
             followed = true;
         }
+    }
+
+    public void onMessageClick (View v) {
+        Intent nextActivity = new Intent(MainActivity.this, MessageGroup.class);
+        startActivity(nextActivity);
     }
 
 }
